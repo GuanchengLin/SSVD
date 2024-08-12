@@ -1,0 +1,47 @@
+comment: 'SSVD (ReVeal)'
+data:
+  max_seq_len: 512
+  ssl_data_path: ''
+  label_rate: 0.1
+  slice: ''
+  ckpt_path: 'ReVeal_SSVD/checkpoint'
+  teacher_path: ''
+
+train:
+  transformers_model_name: 'ReVeal_SSVD/codebert'
+  emb_dim: 768
+  epoch_stop_patience: 80
+  self_train_patience: 5
+  self_train_max_epoch: 15
+  patience_delta: 0.005
+  random_seed: 2023
+  batch_size: 48
+  label_batch_size: 16
+  eval_batch_size: 250
+  bert_lr: 0.0001
+  lstm_emb_lr: 0.0001
+  finetune_lr: 0.0001
+  stopper_mode: 'f1acc' 
+  weight_decay: 0.00000001
+  input_channels: 120
+  hidden_channels: 200
+  num_layers: 8
+
+loss:
+  coef_teacher: 0.0
+  coef_student: 0.75
+  contrastive_type: 'ssvd_trip'
+  ssvd_trip_alpha: 0.1
+  focal_alpha: 0.15 #
+  PHuber_tau: 10
+  loss_type: 'NRCE' 
+  BPH_k: 0.2
+  uncertainty: False
+  balanced_beta: 0.9999
+  label_class_loss: True
+
+sampling:
+  sampling_scheme: 'IG_class'
+  mc_dropout_iters: 20
+  sampling_rate: 0.25
+  eval_pool_size: 8000
