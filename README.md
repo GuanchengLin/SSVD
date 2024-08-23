@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This is the official implementation of **S**emi-**S**upervised **V**ulnerability **D**etection (SSVD). SSVD is a semi-supervised learning method for software vulnerability detection. In this project, we provide the **code implementation** of the relevant paper, as well as **all the datasets and baseline codes** mentioned in the paper. We welcome all researchers interested in our work to reproduce the results.
+This is the official implementation of **S**emi-**S**upervised **V**ulnerability **D**etection (SSVD). SSVD is a semi-supervised learning method for software vulnerability detection. In this project, we provide the **code implementation** of the relevant paper, as well as **all the datasets and baseline codes** mentioned in the paper. We welcome all researchers interested in our work to reproduce the results. You can download the data needed for this project [here](https://figshare.com/s/e4c4cdf09b800bfc3643).
 
 ## Environment Setup
 
